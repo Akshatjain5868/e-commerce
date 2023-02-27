@@ -1,0 +1,60 @@
+<%= flash[:notice] %>
+  <div class="container1">
+	<div class="screen">
+		<div class="screen__content">
+			<%= form_with(model: store, local: true) do |form| %>
+        <% if store.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+            <ul>
+              <% store.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <center>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+          <div class = "login_input">
+					  <%= form.text_field :name, autofocus: true, autocomplete: "Name" , placeholder: "Name" %>
+          </div>
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+          <div class = "login_input">
+					  <%= form.text_field :description, autofocus: true, autocomplete: "Description" , placeholder: "Description" %>
+          </div>
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+          <div class = "login_input">
+					  <%= form.number_field :price, autofocus: true, autocomplete: "Price" , placeholder: "Price" %>
+          </div>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+          <div class = "login_input">
+					  <%= form.label :files %>
+            <%= form.file_field :files, multiple: true %>
+          </div>
+				</div>
+        </center>
+				<button class="button login__submit">
+					<span class="button__text">Submit</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>			
+			<% end %>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+<% @pizzas_gallery.each do |pizza|%>
+    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+        <figure>
+            <div class="img-fluid tm-gallery-img" >
+                <%= image_tag pizza.files.first%>
+            </div>
+            <figcaption>
+                <h4 class="tm-gallery-title"><%= pizza.name %></h4>
+                <p class="tm-gallery-description"><%= pizza.description %></p>
+                <p class="tm-gallery-price"><%= pizza.price %></p>
+            </figcaption>
+        </figure>
+        <%= button_to 'Add to Cart', line_items_path(:store_id => pizza.id)%> </td>
+    </article>
+<% end %>
+

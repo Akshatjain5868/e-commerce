@@ -1,0 +1,36 @@
+<%= flash[:notice] %>
+  <div class="container1">
+	<div class="screen">
+		<div class="screen__content">
+			<%= form_with url: "/admin/login", method: :post do |form|%>
+                <center>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+                    <div class = "login_input">
+					    <%= form.text_field :username, autofocus: true, autocomplete: "Username" , placeholder: "Username" %>
+                    </div>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+                    <div class = "login_input">
+					    <%= form.password_field :password, autocomplete: "current-password",placeholder: "Password" %>
+                    </div>
+				</div>
+                </center>
+				<button class="button login__submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>			
+			<% end %>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+
+
+

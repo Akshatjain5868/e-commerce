@@ -1,0 +1,40 @@
+<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">Welcome to Simple House</h2>
+				<p class="col-12 text-center">Total 3 HTML pages are included in this template. Header image has a parallax effect. You can feel free to download, edit and use this TemplateMo layout for your commercial or non-commercial websites.</p>
+			</header>
+			
+			<div class="tm-paging-links">
+				<nav>
+					<ul>
+						<li class="tm-paging-item"><a href="#tm-gallery-page-pizza" class="tm-paging-link active">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+			
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 -->
+				
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<%= render :template => 'gallery/index.html.erb' %>
+				</div> <!-- gallery page 1 -->	
+			</div>
+			<div class="tm-section tm-container-inner">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="tm-description-figure">
+							<div class="img-fluid tm-gallery-img" >
+                				<%= image_tag "img-01.jpg"%>
+              				</div>
+						</figure>
+					</div>
+					<div class="col-md-6">
+						<div class="tm-description-box"> 
+							<h4 class="tm-gallery-title">Developed by Akshat Jain</h4>
+							<p class="tm-mb-45">This webapp is developed by Akshat Jain.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>

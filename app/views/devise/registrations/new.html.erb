@@ -1,0 +1,59 @@
+<%= flash[:notice] %>
+<div class="container1">
+	<div class="screen">
+		<div class="screen__content">
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <center>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+          <div class = "login_input">
+					  <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "Email" %>
+          </div>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+          <div class = "login_input">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" , placeholder:"Password" %>
+          </div>
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+          <div class = "login_input">
+					  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+          </div>
+				</div>
+      </center>
+				<button class="button login__submit">
+					<span class="button__text">Sign Up Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>			
+			<% end %>
+
+			<div class="social-login">
+				<h3>log in via</h3>
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+
+
+

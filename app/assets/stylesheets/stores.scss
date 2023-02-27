@@ -1,0 +1,18 @@
+// Place all the styles related to the stores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+table {
+  border-collapse: collapse;
+  margin: 50px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+thead th {
+  width: 50%;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yummy</title>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
+  </head>
+
+  <body>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+        <div class="placeholder">
+          <div class="parallax-window" data-parallax="scroll" data-image-src="simple-house-01.jpg">
+            <div class="img-fluid tm-gallery-img" >
+                <%= image_tag "simple-house-01.jpg"%>
+              </div>
+            <div class="tm-header">
+              <div class="row tm-header-inner">
+                <div class="col-md-6 col-12">
+                
+                  <div class="tm-site-text-box">
+                    <h1 class="tm-site-title">Yummy</h1>
+                    <h6 class="tm-site-description">new restaurant </h6>	
+                  </div>
+                </div>
+                <nav class="col-md-6 col-12 tm-nav">
+                  <ul class="tm-nav-ul">
+                    <li class="tm-nav-li"><a href="/home/index" class="tm-nav-link active">Home</a></li>
+                    <li class="tm-nav-li">
+                      <%= form_for(:search,:url=>"/gallery/search") do |f| %>
+                        Search <input type="text" name="search">
+                        <input type="submit" value="Go">
+                      <% end %>
+                    </li>
+                    
+                    <%if session[:admin] %>
+                      <li class="tm-nav-li"><a href="/stores" class="tm-nav-link">Store</a></li>
+                      <li class="tm-nav-li"><a href="/admin/logout" class="tm-nav-link">Logout</a></li>
+                    <%elsif signed_in?%>
+                      <li class="tm-nav-li"><a href="/admin/login" class="tm-nav-link">Admin Login</a></li>
+                      
+                      
+                      <li class="tm-nav-li"><%= link_to "Sign out", destroy_user_session_path,class: 'tm-nav-link' ,:method => :delete %></li> 
+                    <% else %>
+                      <li class="tm-nav-li"><a href="/users/sign_in" class="tm-nav-link">Log in</a></li>
+                    <% end %>
+                    
+                  </ul>
+                </nav>	
+              </div>
+            </div>
+          </div>
+        </div>
+    <%= yield %>
+    <footer class="tm-footer text-center">
+			<p>Copyright &copy; 2023 Akshat Jain 
+            
+        | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a>
+      </p>
+		</footer>
+	 </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        // Handle click on paging links
+        $('.tm-paging-link').click(function(e){
+          e.preventDefault();
+          
+          var page = $(this).text().toLowerCase();
+          $('.tm-gallery-page').addClass('hidden');
+          $('#tm-gallery-page-' + page).removeClass('hidden');
+          $('.tm-paging-link').removeClass('active');
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
